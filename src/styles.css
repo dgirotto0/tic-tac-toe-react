@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+
+* {
+  box-sizing: border-box;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+button {
+  background-color: white;
+  color: slateblue;
+  border: 1px solid slateblue;
+}
+
+button:hover {
+  background-color: slateblue;
+  color: white;
+}
+
+.board-row::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@layer components {
+  .square {
+    @apply bg-white -mt-[1] -mr-[1] float-left text-2xl text-black p-0 font-bold text-center w-8 h-8 border-[1px] border-solid border-black;
+  }
+
+  .game {
+    @apply flex flex-row;
+  }
+  
+  .game-info {
+    @apply ml-5 mt-5 p-0;
+  }
+}
